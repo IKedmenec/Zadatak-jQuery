@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pokemon API</title>
+
+    <link
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="./styles.css" rel="stylesheet" />
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./node_modules/handlebars/dist/handlebars.min.js"></script>
+
+    <script src="./pokemon-script.js" defer></script>
+  </head>
+  <body>
+    <script id="pokemon-lista" type="text/html">
+      <table class="table-primary table striped">
+        <!-- table header -->
+        <tr>
+          <th class="d-none d-sm-block col-sm-block">#</th>
+          <th>Ime</th>
+        </tr>
+        <!-- table data -->
+        {{#each pokemon}}
+        <tr>
+          <td class="d-none d-sm-block col-sm-block">
+            {{increaseIndex @index }}.
+          </td>
+          <td>
+            <a
+              href="#"
+              data-bs-toggle="popover"
+              title="Pokemon info"
+              data-bs-content="{{this.url}}"
+              >{{this.name}}</a
+            >
+          </td>
+        </tr>
+        {{/each}}
+      </table>
+    </script>
+
+    <div id="pokemon-output">
+      <!-- output from template -->
+    </div>
+  </body>
+</html>

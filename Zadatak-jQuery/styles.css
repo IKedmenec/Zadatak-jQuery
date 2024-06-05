@@ -1,0 +1,7 @@
+.headerStyle {
+  color: darkblue;
+}
+
+.zebra {
+  --bs-table-bg: gray;
+}
